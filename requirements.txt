@@ -5,6 +5,19 @@ numpy==1.24.1
 # seaborn==0.13.2
 tqdm==4.67.1
 transformers==4.49.0
+openai
+scikit-learn
+torch
+transformers
+razdel
+nltk
+sentence_transformers
+tiktoken
+protobuf
+blobfile
+SentencePiece
+accelerate==0.26.0
+hf_xet
 # accelerate>=0.26.0
 # tensorboardX
 # wandb
