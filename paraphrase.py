@@ -42,7 +42,7 @@ def paraphrase(relevant_chunk, search_query):
     prompt = f"""
         Далее отвечай по шаблону
         Вопрос: {search_query}
-        Перефразируй текст как ответ: {relevant_chunk}
+        Ответь, на вопрос, используя этот абзац: {relevant_chunk}
         ### Ответ:
     """
     answer = ask_model(prompt)

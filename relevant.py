@@ -74,7 +74,9 @@ class Relevance_Frida:
 
             documents.append([sim_scores[0], document])
         documents.sort(reverse=True)
+        answers = []
         for relevant_chunk in documents[:3]:
             # print(relevant_chunk[1])
             answer = paraphrase(relevant_chunk[1], search_query)
-            print(answer)
+            answers.append(answer)
+        return answers

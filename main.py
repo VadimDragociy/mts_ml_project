@@ -1,6 +1,7 @@
 # from segmenter import Segmenter
 from relevant import *
 import json
+from LLM_as_a_judge import *
 
 if __name__ == '__main__':
     with open("dataSet/texts/deepseek_tale.txt", 'r', encoding='utf-8') as tale:
@@ -33,8 +34,11 @@ if __name__ == '__main__':
         print("------------------------------------------------------")
 
         # rlv_tale.search_for_query(query['question'])
-        rlv.search_for_query(query['question'])
-        print('Вопрос:', query['question'], 'Ответ:', query['answer'])
+        answers_frida = rlv.search_for_query(query['question'])
+        for answer_frida in answers_frida:
+            validate_from_gemini(query['question'], query['answer'], answer_frida)
+
+        # print('Вопрос:', query['question'], 'Ответ:', query['answer'])
         print("------------------------------------------------------")
     #     rlv_tale.search_for_query(query)
     # rlv_tale.search_for_query(query_tale)
